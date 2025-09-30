@@ -17,19 +17,50 @@
     <div id="loginSection" class="login-wrapper">
         <div class="login-card">
             <div class="logo-vuelo"><span class="v-amarelo">V</span><span class="resto-roxo">uelo</span></div>
-            <h2>Acesse a Plataforma de Leads</h2>
-            <form id="loginForm">
-                <div class="input-group">
-                    <label for="username">Usuário</label>
-                    <input type="text" id="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" required>
-                </div>
-                <button type="submit" class="login-btn">Entrar</button>
-                <p id="errorMessage"></p>
-            </form>
+            
+            <!-- Abas Login/Cadastro -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="login">Login</button>
+                <button class="tab-button" data-tab="cadastro">Cadastrar</button>
+            </div>
+
+            <!-- Formulário de Login -->
+            <div id="loginTab" class="tab-content active">
+                <h2>Acesse a Plataforma</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Usuário</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Entrar</button>
+                    <p id="errorMessage"></p>
+                </form>
+            </div>
+
+            <!-- Formulário de Cadastro -->
+            <div id="cadastroTab" class="tab-content">
+                <h2>Criar Nova Conta</h2>
+                <form id="cadastroForm">
+                    <div class="input-group">
+                        <label for="newUsername">Novo Usuário</label>
+                        <input type="text" id="newUsername" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="newPassword">Nova Senha</label>
+                        <input type="password" id="newPassword" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirmar Senha</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="login-btn">Cadastrar</button>
+                    <p id="cadastroMessage"></p>
+                </form>
+            </div>
         </div>
     </div>
 

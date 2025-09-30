@@ -1,4 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- INICIALIZAÇÃO DAS ABAS ---
+    function initTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+                
+                // Remove active class de todos
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Adiciona active class no selecionado
+                button.classList.add('active');
+                document.getElementById(tabName + 'Tab').classList.add('active');
+            });
+        });
+    }
+
+    // --- LÓGICA DE CADASTRO ---
+    function initCadastro() {
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const cadastroMessage = document.getElementById('cadastroMessage');
+
+            if (newPassword !== confirmPassword) {
+                cadastroMessage.textContent = 'As senhas não coincidem.';
+                cadastroMessage.style.color = '#e74c3c';
+                return;
+            }
+
+            if (newPassword.length < 6) {
+                cadastroMessage.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+                cadastroMessage.style.color = '#e74c3c';
+                return;
+            }
+
+            // Salvar no localStorage
+            const users = JSON.parse(localStorage.getItem('vueloUsers')) || {};
+            
+            if (users[newUsername]) {
+                cadastroMessage.textContent = 'Usuário já existe.';
+                cadastroMessage.style.color = '#e74c3c';
+                return;
+            }
+
+            users[newUsername] = newPassword;
+            localStorage.setItem('vueloUsers', JSON.stringify(users));
+            
+            cadastroMessage.textContent = 'Cadastro realizado com sucesso! Faça login.';
+            cadastroMessage.style.color = '#27ae60';
+            
+            // Limpar formulário
+            document.getElementById('cadastroForm').reset();
+            
+            // Voltar para a aba de login após 2 segundos
+            setTimeout(() => {
+                document.querySelector('[data-tab="login"]').click();
+            }, 2000);
+        });
+    }
+
     // --- LÓGICA DE LOGIN ---
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -7,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
         const errorMessage = document.getElementById('errorMessage');
 
-        // Defina seu usuário e senha aqui
-        const validUser = 'admin';
-        const validPass = 'vuelo2025';
+        // Verificar no localStorage
+        const users = JSON.parse(localStorage.getItem('vueloUsers')) || {};
+        const validUser = users[username];
 
-        if (username === validUser && password === validPass) {
+        if (validUser && password === validUser) {
             // Esconde a tela de login
             document.getElementById('loginSection').style.display = 'none';
             // Mostra a plataforma
@@ -23,27 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- INÍCIO DA LÓGICA DA APLICAÇÃO ---
-    function initializeApp() {
-        loadFromLocalStorage();
-        populateTable(establishments);
-        initCharts();
-        
-        document.getElementById('applyFilters').addEventListener('click', applyFilters);
-        document.getElementById('resetFilters').addEventListener('click', resetFilters);
-        document.getElementById('searchBtn').addEventListener('click', searchEstablishments);
-        document.getElementById('searchInput').addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') searchEstablishments();
-        });
-        
-        document.getElementById('closeModal').addEventListener('click', closeDetailsModal);
-        
-        window.addEventListener('click', (e) => {
-            if (e.target === document.getElementById('detailsModal')) {
-                closeDetailsModal();
-            }
-        });
-    }
+    // Inicializar abas e cadastro
+    initTabs();
+    initCadastro();
 });
 
 // =================================================================================
@@ -78,9 +127,32 @@ function loadFromLocalStorage() {
     }
 }
 
-
 function saveToLocalStorage() {
     localStorage.setItem('vueloLeadsData', JSON.stringify(establishments));
+}
+
+// =================================================================================
+// INICIALIZAÇÃO DA APLICAÇÃO PRINCIPAL
+// =================================================================================
+function initializeApp() {
+    loadFromLocalStorage();
+    populateTable(establishments);
+    initCharts();
+    
+    document.getElementById('applyFilters').addEventListener('click', applyFilters);
+    document.getElementById('resetFilters').addEventListener('click', resetFilters);
+    document.getElementById('searchBtn').addEventListener('click', searchEstablishments);
+    document.getElementById('searchInput').addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') searchEstablishments();
+    });
+    
+    document.getElementById('closeModal').addEventListener('click', closeDetailsModal);
+    
+    window.addEventListener('click', (e) => {
+        if (e.target === document.getElementById('detailsModal')) {
+            closeDetailsModal();
+        }
+    });
 }
 
 // =================================================================================
@@ -269,5 +341,3 @@ function searchEstablishments() {
     
     populateTable(filteredData);
 }
-
-
