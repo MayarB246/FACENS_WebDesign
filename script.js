@@ -98,33 +98,24 @@ document.addEventListener('DOMContentLoaded', () => {
 // =================================================================================
 // DADOS INICIAIS E GERENCIAMENTO DE ESTADO
 // =================================================================================
-let establishments = [
-    // Açougues
-    { name: "Açougue e Mercado Tapa Buraco", type: "Açougue", phone: "(15) 3353-2091", address: "R. Antônio Rodrigues Alves, 344", neighborhood: "Centro", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    { name: "Açougue e Peixaria São Judas", type: "Açougue", phone: "(15) 3353-2582", address: "R. Santa Cruz, 287", neighborhood: "Vila Lopez", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    { name: "Açougue Real", type: "Açougue", phone: "(15) 3353-2256", address: "Av. 31 de Março, 701", neighborhood: "Centro", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    { name: "Açougue e Mercearia 3 Irmãos", type: "Açougue", phone: "(15) 3352-1942", address: "R. José Inácio, 230", neighborhood: "Vila Garcia", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    { name: "Super Açougue e Mercearia D'Luz", type: "Açougue", phone: "(15) 3353-2048", address: "R. Antônio Alves, 352", neighborhood: "Centro", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
+let establishments = [];
 
-    // Joalherias
-    { name: "Joalheria Diniz", type: "Joalheria", phone: "(15) 3353-1555", address: "R. Antônio Rodrigues Alves, 250 - Loja 3", neighborhood: "Centro", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    { name: "Ourivesaria e Joalheria Ouro & Estilo", type: "Joalheria", phone: "(15) 3353-3030", address: "Av. 31 de Março, 523", neighborhood: "Centro", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    
-    // Restaurantes
-    { name: "Armazém do João", type: "Restaurante", phone: "(15) 3231-3004", address: "R. Dr. Álvaro Soares, 500", neighborhood: "Centro", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    { name: "Cantina di Giovanni", type: "Restaurante", phone: "(15) 3233-1313", address: "Av. Eng. Carlos Reinaldo Mendes, 3040", neighborhood: "Alto da Boa Vista", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" },
-    { name: "Outback Steakhouse", type: "Restaurante", phone: "(15) 3336-9400", address: "Av. Prof.ª Izoraida Marques Peres, 401", neighborhood: "Parque Campolim", status: "", etapas: { etapa1: false, etapa2: false, etapa3: false }, observacoes: "" }
-];
-
-function loadFromLocalStorage() {
-    const savedData = localStorage.getItem('vueloLeadsData');
-    if (savedData) {
-        // Apenas carrega se não estiver vazio, para não sobrescrever os dados iniciais
-        const parsedData = JSON.parse(savedData);
-        if (parsedData.length > 0) {
-            establishments = parsedData;
-        }
+async function loadEstablishments() {
+  const localData = localStorage.getItem('vueloLeadsData');
+  if (localData) {
+    establishments = JSON.parse(localData);
+    console.log('Dados carregados do localStorage:', establishments.length);
+  } else {
+    try {
+      const response = await fetch('data/establishments.json');
+      const json = await response.json();
+      console.log('Dados carregados do JSON:', json.length); // 👈 teste
+      establishments = json;
+      saveToLocalStorage();
+    } catch (error) {
+      console.error('Erro ao carregar JSON:', error);
     }
+  }
 }
 
 function saveToLocalStorage() {
@@ -134,48 +125,50 @@ function saveToLocalStorage() {
 // =================================================================================
 // INICIALIZAÇÃO DA APLICAÇÃO PRINCIPAL
 // =================================================================================
-function initializeApp() {
-    loadFromLocalStorage();
-    populateTable(establishments);
-    initCharts();
-    
-    document.getElementById('applyFilters').addEventListener('click', applyFilters);
-    document.getElementById('resetFilters').addEventListener('click', resetFilters);
-    document.getElementById('searchBtn').addEventListener('click', searchEstablishments);
-    document.getElementById('searchInput').addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') searchEstablishments();
-    });
-    
-    document.getElementById('closeModal').addEventListener('click', closeDetailsModal);
-    
-    window.addEventListener('click', (e) => {
-        if (e.target === document.getElementById('detailsModal')) {
-            closeDetailsModal();
-        }
-    });
+async function initializeApp() {
+  await loadEstablishments(); // aguarda os dados
+  populateTable(establishments); // exibe todos
+  initCharts(); // atualiza gráficos
+  updateStatusCounters(establishments); // atualiza contador
+  console.log('Total de leads carregados:', establishments.length);
+
+
+  // eventos
+  document.getElementById('applyFilters').addEventListener('click', applyFilters);
+  document.getElementById('resetFilters').addEventListener('click', resetFilters);
+  document.getElementById('searchBtn').addEventListener('click', searchEstablishments);
+  document.getElementById('searchInput').addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') searchEstablishments();
+  });
+  document.getElementById('closeModal').addEventListener('click', closeDetailsModal);
+  window.addEventListener('click', (e) => {
+    if (e.target === document.getElementById('detailsModal')) closeDetailsModal();
+  });
 }
+
 
 // =================================================================================
 // RENDERIZAÇÃO DA INTERFACE (UI)
 // =================================================================================
-function updateStatusCounters() {
-    document.getElementById('total-count').textContent = establishments.length;
-    document.getElementById('frios-count').textContent = establishments.filter(e => e.status === 'frio').length;
-    document.getElementById('mornos-count').textContent = establishments.filter(e => e.status === 'morno').length;
-    document.getElementById('quentes-count').textContent = establishments.filter(e => e.status === 'quente').length;
+function updateStatusCounters(data = establishments) {
+  document.getElementById('total-count').textContent = data.length;
+  document.getElementById('frios-count').textContent = data.filter(e => e.status === 'frio').length;
+  document.getElementById('mornos-count').textContent = data.filter(e => e.status === 'morno').length;
+  document.getElementById('quentes-count').textContent = data.filter(e => e.status === 'quente').length;
 }
+
 
 function populateTable(data) {
     const tableBody = document.getElementById('establishmentsTable');
     tableBody.innerHTML = '';
     
-    data.forEach((establishment) => {
+    data.forEach((establishment, index) => {
         let statusClass = 'status-sem', statusText = 'Sem Status';
         if (establishment.status === 'frio') { statusClass = 'status-frio'; statusText = 'Frio'; }
         else if (establishment.status === 'morno') { statusClass = 'status-morno'; statusText = 'Morno'; }
         else if (establishment.status === 'quente') { statusClass = 'status-quente'; statusText = 'Quente'; }
         
-        const originalIndex = establishments.findIndex(orig => orig.name === establishment.name && orig.address === establishment.address);
+        const originalIndex = index; // usa o índice direto
 
         const row = document.createElement('tr');
         row.innerHTML = `

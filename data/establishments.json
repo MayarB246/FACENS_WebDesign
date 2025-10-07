@@ -1,0 +1,442 @@
+[
+  {
+    "name": "Açougue Real",
+    "type": "Açougue",
+    "phone": "(15) 3353-2256",
+    "address": "Av. 31 de Março, 701",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue São Judas",
+    "type": "Açougue",
+    "phone": "(15) 3353-2582",
+    "address": "R. Santa Cruz, 287",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue 3 Irmãos",
+    "type": "Açougue",
+    "phone": "(15) 3352-1942",
+    "address": "R. José Inácio, 230",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue D'Luz",
+    "type": "Açougue",
+    "phone": "(15) 3353-2048",
+    "address": "R. Antônio Alves, 352",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue do Zé",
+    "type": "Açougue",
+    "phone": "(15) 3353-1111",
+    "address": "R. das Palmeiras, 100",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue Central",
+    "type": "Açougue",
+    "phone": "(15) 3353-2222",
+    "address": "Av. Brasil, 200",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue Toninho",
+    "type": "Açougue",
+    "phone": "(15) 3353-3333",
+    "address": "R. das Laranjeiras, 300",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue São Pedro",
+    "type": "Açougue",
+    "phone": "(15) 3353-4444",
+    "address": "R. São Pedro, 400",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue do Bairro",
+    "type": "Açougue",
+    "phone": "(15) 3353-5555",
+    "address": "R. do Comércio, 500",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue Boa Carne",
+    "type": "Açougue",
+    "phone": "(15) 3353-6666",
+    "address": "Av. das Nações, 600",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue do João",
+    "type": "Açougue",
+    "phone": "(15) 3353-7777",
+    "address": "R. João Pessoa, 700",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue da Família",
+    "type": "Açougue",
+    "phone": "(15) 3353-8888",
+    "address": "R. da Paz, 800",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue União",
+    "type": "Açougue",
+    "phone": "(15) 3353-9999",
+    "address": "Av. União, 900",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Açougue Popular",
+    "type": "Açougue",
+    "phone": "(15) 3353-0000",
+    "address": "R. Popular, 1000",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Diniz",
+    "type": "Joalheria",
+    "phone": "(15) 3353-1555",
+    "address": "R. Antônio Rodrigues Alves, 250",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Ouro & Estilo",
+    "type": "Joalheria",
+    "phone": "(15) 3353-3030",
+    "address": "Av. 31 de Março, 523",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Brilho Raro",
+    "type": "Joalheria",
+    "phone": "(15) 3353-1010",
+    "address": "R. das Pedras, 101",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Luxo & Arte",
+    "type": "Joalheria",
+    "phone": "(15) 3353-2020",
+    "address": "Av. das Artes, 202",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Estrela",
+    "type": "Joalheria",
+    "phone": "(15) 3353-4040",
+    "address": "R. Estrela, 303",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Bela Vista",
+    "type": "Joalheria",
+    "phone": "(15) 3353-5050",
+    "address": "Av. Bela Vista, 404",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria da Vila",
+    "type": "Joalheria",
+    "phone": "(15) 3353-6060",
+    "address": "R. da Vila, 505",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Pérola Negra",
+    "type": "Joalheria",
+    "phone": "(15) 3353-7070",
+    "address": "R. Pérola, 606",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Diamante Azul",
+    "type": "Joalheria",
+    "phone": "(15) 3353-8080",
+    "address": "Av. Diamante, 707",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Cristal",
+    "type": "Joalheria",
+    "phone": "(15) 3353-9090",
+    "address": "R. Cristal, 808",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Elegance",
+    "type": "Joalheria",
+    "phone": "(15) 3353-1212",
+    "address": "Av. Elegante, 909",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Rubi",
+    "type": "Joalheria",
+    "phone": "(15) 3353-2323",
+    "address": "R. Rubi, 1010",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Safira",
+    "type": "Joalheria",
+    "phone": "(15) 3353-3434",
+    "address": "Av. Safira, 1111",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Topázio",
+    "type": "Joalheria",
+    "phone": "(15) 3353-4545",
+    "address": "R. Topázio, 1212",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Joalheria Esmeralda",
+    "type": "Joalheria",
+    "phone": "(15) 3353-5656",
+    "address": "Av. Esmeralda, 1313",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Armazém do João",
+    "type": "Restaurante",
+    "phone": "(15) 3231-3004",
+    "address": "R. Dr. Álvaro Soares, 500",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Cantina di Giovanni",
+    "type": "Restaurante",
+    "phone": "(15) 3233-1313",
+    "address": "Av. Eng. Carlos Reinaldo Mendes, 3040",
+    "neighborhood": "Alto da Boa Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Outback Steakhouse",
+    "type": "Restaurante",
+    "phone": "(15) 3336-9400",
+    "address": "Av. Prof.ª Izoraida Marques Peres, 401",
+    "neighborhood": "Parque Campolim",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante Sabor & Arte",
+    "type": "Restaurante",
+    "phone": "(15) 3344-1122",
+    "address": "R. das Flores, 123",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Bistrô da Vila",
+    "type": "Restaurante",
+    "phone": "(15) 3344-2233",
+    "address": "R. da Vila, 456",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Churrascaria Fogo Alto",
+    "type": "Restaurante",
+    "phone": "(15) 3344-3344",
+    "address": "Av. Brasil, 789",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante do Chef",
+    "type": "Restaurante",
+    "phone": "(15) 3344-4455",
+    "address": "R. Gourmet, 321",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante Bela Vista",
+    "type": "Restaurante",
+    "phone": "(15) 3344-5566",
+    "address": "Av. Bela Vista, 654",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante do Pescador",
+    "type": "Restaurante",
+    "phone": "(15) 3344-6677",
+    "address": "R. do Porto, 987",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante Itália",
+    "type": "Restaurante",
+    "phone": "(15) 3344-7788",
+    "address": "Av. Europa, 741",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante do Campo",
+    "type": "Restaurante",
+    "phone": "(15) 3344-8899",
+    "address": "R. Rural, 852",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante Oriental",
+    "type": "Restaurante",
+    "phone": "(15) 3344-9900",
+    "address": "Av. Japão, 963",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante do Mineiro",
+    "type": "Restaurante",
+    "phone": "(15) 3344-1010",
+    "address": "R. Minas Gerais, 147",
+    "neighborhood": "Centro",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante do Alemão",
+    "type": "Restaurante",
+    "phone": "(15) 3344-1111",
+    "address": "Av. Alemanha, 258",
+    "neighborhood": "Vila Garcia",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
+    "name": "Restaurante Tropical",
+    "type": "Restaurante",
+    "phone": "(15) 3344-1212",
+    "address": "R. das Palmeiras, 369",
+    "neighborhood": "Vila Lopez",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  }
+]
