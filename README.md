@@ -62,7 +62,7 @@ Como este é um projeto puramente front-end, não é necessário um servidor ou 
 
 1.  **Clone ou baixe este repositório:**
     ```bash
-    git clone https://github.com/henriqueavilab/WD-SITE
+    git clone https://github.com/MayarB246/FACENS_WebDesign
     ```
     Ou simplesmente baixe os arquivos `.zip`.
 
