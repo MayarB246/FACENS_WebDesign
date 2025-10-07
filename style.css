@@ -225,12 +225,3 @@ footer { text-align: center; padding: 20px; margin-top: 30px; color: #fff; borde
     .search-container { width: 100%; }
     .search-container input { width: 100%; }
 }
-
-.lead-counters {
-  font-size: 16px;
-  margin-bottom: 15px;
-  color: #333;
-}
-.lead-counters span {
-  margin-right: 20px;
-}
