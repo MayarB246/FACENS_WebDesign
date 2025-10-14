@@ -168,7 +168,12 @@ function populateTable(data) {
         else if (establishment.status === 'morno') { statusClass = 'status-morno'; statusText = 'Morno'; }
         else if (establishment.status === 'quente') { statusClass = 'status-quente'; statusText = 'Quente'; }
         
-        const originalIndex = index; // usa o índice direto
+        const originalIndex = establishments.findIndex(e =>
+            e.name === establishment.name &&
+            e.address === establishment.address &&
+            e.type === establishment.type
+        );
+
 
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -234,14 +239,15 @@ function initCharts() {
 // MANIPULADORES DE EVENTOS E INTERAÇÕES
 // =================================================================================
 function cycleLeadStatus(index) {
-    const statusOrder = ['', 'frio', 'morno', 'quente'];
-    const currentStatus = establishments[index].status;
-    const nextIndex = (statusOrder.indexOf(currentStatus) + 1) % statusOrder.length;
-    establishments[index].status = statusOrder[nextIndex];
-    saveToLocalStorage();
-    applyFilters();
-    initCharts();
+  const statusOrder = ['', 'frio', 'morno', 'quente'];
+  const currentStatus = establishments[index].status;
+  const nextIndex = (statusOrder.indexOf(currentStatus) + 1) % statusOrder.length;
+  establishments[index].status = statusOrder[nextIndex];
+  saveToLocalStorage();
+  populateTable(establishments); // ✅ atualiza sem filtros
+  initCharts();
 }
+
 
 function toggleEtapa(index, etapa) {
     establishments[index].etapas[etapa] = !establishments[index].etapas[etapa];

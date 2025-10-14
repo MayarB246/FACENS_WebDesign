@@ -68,13 +68,22 @@
     <div id="appSection" class="container" style="display: none;">
         <header>
             <div class="logo">
-                <div class="logo-vuelo"><span class="v-amarelo">V</span><span class="resto-roxo">uelo</span></div>
+                <div class="logo-vuelo">
+                <span class="v-amarelo">V</span><span class="resto-roxo">uelo</span>
+                </div>
             </div>
+
+            <nav class="menu-links">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Início</a>
+                <a href="configuracoes.html"><i class="fas fa-cogs"></i> Configurações</a>
+            </nav>
+
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Buscar estabelecimento...">
                 <button id="searchBtn"><i class="fas fa-search"></i> Buscar</button>
             </div>
         </header>
+
     
         <div class="stats">
             <div class="stat-card"><h3>Total de Leads</h3><div class="number" id="total-count">0</div></div>

@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.5s, color 0.5s;
+  background: linear-gradient(to right, #f0f0f0, #e0e0ff);
+  color: #333;
+}
+
+body.dark {
+  background: linear-gradient(to right, #1c1c1c, #2c2c3a);
+  color: #f0f0f0;
+}
+
+header {
+  background: #6c63ff;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-vuelo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.v-amarelo {
+  color: #fdd835;
+}
+
+.resto-roxo {
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+.config-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.config-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+body.dark .config-section {
+  background: rgba(50, 50, 70, 0.8);
+}
+
+.config-section h2 {
+  margin-top: 0;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #6c63ff;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #5a54d1;
+}
+
+.decorative-img {
+  width: 100px;
+  margin-top: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+  font-size: 0.9rem;
+}
+
+body.dark footer {
+  background: #2c2c3a;
+}

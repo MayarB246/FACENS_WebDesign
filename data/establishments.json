@@ -90,6 +90,16 @@
     "observacoes": ""
   },
   {
+    "name": "Açougue Boi Bravo",
+    "type": "Açougue",
+    "phone": "(15) 3353-7878",
+    "address": "Av. das Acácias, 222",
+    "neighborhood": "Jardim Bela Vista",
+    "status": "",
+    "etapas": { "etapa1": false, "etapa2": false, "etapa3": false },
+    "observacoes": ""
+  },
+  {
     "name": "Açougue Boa Carne",
     "type": "Açougue",
     "phone": "(15) 3353-6666",
