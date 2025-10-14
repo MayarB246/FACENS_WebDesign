@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,13 @@
     <!-- Biblioteca de Gráficos -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <!-- Seção de Login (visível no início) -->
     <div id="loginSection" class="login-wrapper">
         <div class="login-card">
             <div class="logo-vuelo"><span class="v-amarelo">V</span><span class="resto-roxo">uelo</span></div>
-            
+
             <!-- Abas Login/Cadastro -->
             <div class="tabs">
                 <button class="tab-button active" data-tab="login">Login</button>
@@ -69,13 +71,14 @@
         <header>
             <div class="logo">
                 <div class="logo-vuelo">
-                <span class="v-amarelo">V</span><span class="resto-roxo">uelo</span>
+                    <span class="v-amarelo">V</span><span class="resto-roxo">uelo</span>
                 </div>
             </div>
 
             <nav class="menu-links">
                 <a href="index.html" class="active"><i class="fas fa-home"></i> Início</a>
                 <a href="func/funcionalidades.html"><i class="fas fa-cogs"></i> Funcionalidades</a>
+                <a href="sobre/sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
             </nav>
 
             <div class="search-container">
@@ -84,14 +87,27 @@
             </div>
         </header>
 
-    
+
+
         <div class="stats">
-            <div class="stat-card"><h3>Total de Leads</h3><div class="number" id="total-count">0</div></div>
-            <div class="stat-card"><h3>Leads Frios</h3><div class="number" id="frios-count">0</div></div>
-            <div class="stat-card"><h3>Leads Mornos</h3><div class="number" id="mornos-count">0</div></div>
-            <div class="stat-card"><h3>Leads Quentes</h3><div class="number" id="quentes-count">0</div></div>
+            <div class="stat-card">
+                <h3>Total de Leads</h3>
+                <div class="number" id="total-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Leads Frios</h3>
+                <div class="number" id="frios-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Leads Mornos</h3>
+                <div class="number" id="mornos-count">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Leads Quentes</h3>
+                <div class="number" id="quentes-count">0</div>
+            </div>
         </div>
-        
+
         <div class="dashboard">
             <div class="filters">
                 <h2>Filtros</h2>
@@ -112,7 +128,7 @@
                         <option value="Vila Garcia">Vila Garcia</option>
                         <option value="Vila Lopez">Vila Lopez</option>
                         <option value="Jardim Bela Vista">Jardim Bela Vista</option>
-                         <!-- ... outros bairros ... -->
+                        <!-- ... outros bairros ... -->
                     </select>
                 </div>
                 <div class="filter-group">
@@ -143,16 +159,22 @@
                         <option value="status">Status</option>
                     </select>
                 </div>
-                <button class="action-btn" style="width: 100%; margin-top: 10px;" id="applyFilters">Aplicar Filtros</button>
-                <button class="action-btn" style="width: 100%; margin-top: 10px; background: #555;" id="resetFilters">Limpar Filtros</button>
+                <button class="action-btn" style="width: 100%; margin-top: 10px;" id="applyFilters">Aplicar
+                    Filtros</button>
+                <button class="action-btn" style="width: 100%; margin-top: 10px; background: #555;"
+                    id="resetFilters">Limpar Filtros</button>
             </div>
-            
+
             <div class="charts">
-                <div class="chart-container"><h2>Distribuição por Tipo</h2><canvas id="typeChart"></canvas></div>
-                <div class="chart-container"><h2>Status dos Leads</h2><canvas id="statusChart"></canvas></div>
+                <div class="chart-container">
+                    <h2>Distribuição por Tipo</h2><canvas id="typeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Status dos Leads</h2><canvas id="statusChart"></canvas>
+                </div>
             </div>
         </div>
-        
+
         <div class="establishments-list">
             <h2>Lista de Leads</h2>
             <table>
@@ -167,7 +189,7 @@
                 <tbody id="establishmentsTable"></tbody>
             </table>
         </div>
-        
+
         <div class="modal" id="detailsModal">
             <div class="modal-content">
                 <div class="modal-header">
@@ -177,7 +199,7 @@
                 <div id="modalBody"></div>
             </div>
         </div>
-        
+
         <footer>
             <p>© 2025 Vuelo Analytics - Sistema de Prospecção - Todos os direitos reservados</p>
         </footer>
@@ -186,4 +208,5 @@
     <!-- Script Local -->
     <script src="script.js"></script>
 </body>
+
 </html>
