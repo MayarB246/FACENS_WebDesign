@@ -1,0 +1,171 @@
+/* Estilo base Vuelo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(74, 54, 117, 0.85);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Cabeçalho Vuelo */
+header {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo-vuelo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.v-amarelo {
+  color: #FFD700;
+}
+
+.resto-roxo {
+  color: #9370DB;
+}
+
+.menu-links {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-links a {
+  color: #9370DB;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.menu-links a:hover {
+  transform: scale(1.05);
+  color: #7B68EE;
+}
+
+.menu-links a.active {
+  text-decoration: underline;
+}
+
+/* Seções */
+section {
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  margin-bottom: 15px;
+  color: #9370DB;
+  font-size: 1.5em;
+}
+
+button {
+  padding: 10px 18px;
+  background: #9370DB;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #7B68EE;
+}
+
+input, select {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  width: 200px;
+  font-size: 16px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #9370DB;
+}
+
+#calc-result,
+#copy-status,
+#form-status {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #9370DB;
+}
+
+#clock {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  background: #f0f0f0;
+  color: #9370DB;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+#email-feedback,
+#senha-feedback {
+  font-size: 0.9em;
+  color: red;
+}
+
+/* Typewriter */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid #9370DB;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
