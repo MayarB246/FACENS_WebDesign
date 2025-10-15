@@ -46,11 +46,13 @@ header {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap; /* ✅ permite quebra quando o espaço acabar */
 }
 
 .logo-vuelo {
   font-size: 1.8rem;
   font-weight: bold;
+  flex-shrink: 0; /* ✅ impede que a logo seja comprimida */
 }
 
 .v-amarelo {
@@ -61,12 +63,24 @@ header {
   color: #9370DB;
 }
 
+.menu-links {
+  display: flex;
+  flex-wrap: wrap; /* ✅ permite que os links quebrem linha */
+  justify-content: center; /* ✅ centraliza quando quebrar */
+  gap: 20px;
+  flex: 1; /* ✅ ocupa o espaço restante */
+  text-align: center;
+}
+
 .menu-links a {
   color: #9370DB;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
   transition: transform 0.2s;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap; /* ✅ evita quebra de palavras */
 }
 
 .menu-links a:hover {
@@ -174,4 +188,61 @@ button:hover {
 
 @keyframes blink {
   50% { border-color: transparent }
+}
+
+/* ✅ RESPONSIVIDADE GERAL */
+
+/* Telas médias - reorganiza o cabeçalho e menu */
+@media (max-width: 950px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .menu-links {
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .menu-links a {
+    font-size: 15px;
+  }
+}
+
+/* Telas pequenas - empilha tudo verticalmente */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+  }
+
+  .menu-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .intro, .form-card {
+    padding: 20px;
+  }
+
+  .logo-vuelo {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 20px 15px;
+  }
 }
