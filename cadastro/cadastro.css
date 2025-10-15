@@ -7,7 +7,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -112,7 +113,7 @@ header {
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 20px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
   flex-grow: 1;
 }
 
@@ -134,7 +135,7 @@ header {
   color: #333;
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -197,19 +198,30 @@ button:hover {
 
 /* Typewriter */
 .typewriter {
+  display: inline-block;
   overflow: hidden;
   border-right: 3px solid #9370DB;
   white-space: nowrap;
-  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+  max-width: 100%;
+  /* impede que ultrapasse a tela */
 }
 
+
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
 }
 
 @keyframes blink {
-  50% { border-color: transparent }
+  50% {
+    border-color: transparent
+  }
 }
 
 /* Responsividade */
@@ -313,94 +325,34 @@ button:hover {
     padding: 20px;
   }
 
+  /* ✅ Correção definitiva do fundo no celular */
   body {
     background-attachment: scroll;
-  }
-}
-
-/* ======== Ajustes de responsividade ======== */
-
-/* Tamanho base do texto e espaçamento em telas grandes */
-html {
-  font-size: 16px;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px 20px;
-}
-
-/* Para tablets (até 900px) */
-@media (max-width: 900px) {
-  html {
-    font-size: 17px;
-  }
-  .container {
-    max-width: 90%;
-  }
-  header {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .menu-links a {
-    display: block;
-    margin: 5px 0;
-  }
-}
-
-/* Para celulares (até 600px) */
-@media (max-width: 600px) {
-  html {
-    font-size: 18px; /* aumenta tudo proporcionalmente */
-  }
-
-  body {
-    background-attachment: scroll;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .logo-vuelo {
-    font-size: 2rem;
-  }
-
-  .menu-links a {
-    display: block;
-    margin: 10px 0;
-    font-size: 1.1rem;
-  }
-
-  .intro, .form-card {
-    padding: 25px 20px;
-    font-size: 1.05rem;
-  }
-
-  input, select, textarea, button {
-    font-size: 1rem;
-    padding: 14px;
-  }
-
-  button {
-    font-size: 1.1rem;
-    padding: 16px;
-  }
-
-  #titulo-digitado {
-    font-size: 1.6rem;
-  }
-}
-
-/* Corrigir o fundo no celular */
-@media (max-width: 600px) {
-  body {
-    background-attachment: scroll;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
+  }
+}
+
+/* Evitar texto cortado no celular */
+@media (max-width: 600px) {
+  #titulo-digitado {
+    white-space: normal;
+    /* permite quebra de linha */
+    overflow: visible;
+    /* mostra todo o texto */
+    text-align: center;
+    /* centraliza o texto */
+    font-size: 1.8rem;
+    /* um pouco maior, mas ajustado */
+    line-height: 1.3;
+    /* melhora a leitura */
+    border-right: none;
+    /* remove o cursor piscando se quiser */
+  }
+
+  .typewriter {
+    border-right: none;
+    /* impede corte visual no final da linha */
   }
 }
