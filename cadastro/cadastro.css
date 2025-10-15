@@ -317,3 +317,81 @@ button:hover {
     background-attachment: scroll;
   }
 }
+
+/* ======== Ajustes de responsividade ======== */
+
+/* Tamanho base do texto e espaçamento em telas grandes */
+html {
+  font-size: 16px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Para tablets (até 900px) */
+@media (max-width: 900px) {
+  html {
+    font-size: 17px;
+  }
+  .container {
+    max-width: 90%;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menu-links a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+/* Para celulares (até 600px) */
+@media (max-width: 600px) {
+  html {
+    font-size: 18px; /* aumenta tudo proporcionalmente */
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .logo-vuelo {
+    font-size: 2rem;
+  }
+
+  .menu-links a {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  .intro, .form-card {
+    padding: 25px 20px;
+    font-size: 1.05rem;
+  }
+
+  input, select, textarea, button {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 16px;
+  }
+
+  #titulo-digitado {
+    font-size: 1.6rem;
+  }
+}
