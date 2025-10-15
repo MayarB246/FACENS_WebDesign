@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Estabelecimento | Vuelo</title>
+  <link rel="stylesheet" href="cadastro.css" />
+  <script defer src="cadastro.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-menu">
+        <div class="logo-vuelo">
+          <span class="v-amarelo">V</span><span class="resto-roxo">uelo</span>
+        </div>
+        <nav class="menu-links">
+          <a href="../index.html" class="active">← Página Principal</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="intro">
+      <h1 id="titulo-digitado" class="typewriter">Cadastrar Novo Estabelecimento</h1>
+      <p>Preencha os dados abaixo para adicionar um novo lead à sua lista.</p>
+    </section>
+
+    <section class="form-card">
+      <form id="cadastro-form">
+        <div class="input-group">
+          <label for="nome">Nome do Estabelecimento</label>
+          <input type="text" id="nome" required />
+        </div>
+
+        <div class="input-group">
+          <label for="tipo">Tipo</label>
+          <select id="tipo" required>
+            <option value="">Selecione</option>
+            <option value="Restaurante">Restaurante</option>
+            <option value="Loja">Loja</option>
+            <option value="Serviço">Serviço</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="bairro">Bairro</label>
+          <input type="text" id="bairro" required />
+        </div>
+
+        <div class="input-group">
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" required />
+        </div>
+
+        <div class="input-group">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" required />
+        </div>
+
+        <div class="input-group">
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+        <p id="mensagem-status"></p>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
