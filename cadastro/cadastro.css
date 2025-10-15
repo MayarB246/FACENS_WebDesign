@@ -1,4 +1,17 @@
+/* =======================
+   Base & Reset
+======================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:root {
+  --roxo: #9370DB;
+  --roxo-escuro: #4a3675;
+  --amarelo: #FFD700;
+  --branco: #ffffff;
+  --cinza-claro: #f3f3f3;
+  --texto-escuro: #333;
+  --texto-claro: #e0dff2;
+}
 
 * {
   margin: 0;
@@ -7,67 +20,51 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-html,
-body {
+html, body {
   height: 100%;
-}
-
-body {
-  background-image: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  color: #fff;
-  min-height: 100vh;
-  position: relative;
+  font-size: 16px;
+  background: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop') center top / cover fixed;
+  color: var(--branco);
   display: flex;
   flex-direction: column;
 }
 
 body::before {
   content: '';
-  position: fixed; /* ✅ Fica fixo no fundo, não corta mais */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  inset: 0;
   background: rgba(74, 54, 117, 0.85);
   z-index: 1;
-  pointer-events: none; /* não interfere em cliques */
+  pointer-events: none;
 }
 
-
+/* =======================
+   Container / Layout
+======================= */
 .container {
   position: relative;
   z-index: 2;
-  width: 100%;
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 20px;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+  gap: 30px;
 }
 
-/* Cabeçalho */
+/* =======================
+   Header
+======================= */
 header {
-  background-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
   padding: 15px 25px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.logo-menu {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -76,25 +73,19 @@ header {
   font-weight: bold;
 }
 
-.v-amarelo {
-  color: #FFD700;
-}
-
-.resto-roxo {
-  color: #9370DB;
-}
+.v-amarelo { color: var(--amarelo); }
+.resto-roxo { color: var(--roxo); }
 
 .menu-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .menu-links a {
-  color: #9370DB;
-  text-decoration: none;
+  color: var(--roxo);
   font-weight: bold;
+  text-decoration: none;
   font-size: 18px;
   transition: transform 0.2s;
 }
@@ -108,51 +99,45 @@ header {
   text-decoration: underline;
 }
 
-/* Introdução */
+/* =======================
+   Introdução / Intro
+======================= */
 .intro {
-  background: white;
-  color: #333;
+  background: var(--branco);
+  color: var(--texto-escuro);
   border-radius: 12px;
   padding: 25px;
-  margin-bottom: 20px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-  flex-grow: 1;
+  text-align: center;
 }
 
 .intro h1 {
-  margin-bottom: 10px;
-  color: #9370DB;
+  color: var(--roxo);
   font-size: 2rem;
-  text-align: center;
+  margin-bottom: 10px;
 }
 
 .intro p {
   font-size: 1.1rem;
-  text-align: center;
 }
-
-/* Formulário */
+/* =======================
+   Formulário / Form Card
+======================= */
 .form-card {
-  background: white;
-  color: #333;
+  background: var(--branco);
+  color: var(--texto-escuro);
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.input-group {
-  margin-bottom: 20px;
+  gap: 20px;
 }
 
 .input-group label {
-  display: block;
-  margin-bottom: 8px;
   font-weight: 600;
-  color: #333;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .input-group input,
@@ -160,28 +145,27 @@ header {
 .input-group textarea {
   width: 100%;
   padding: 12px;
+  font-size: 16px;
   border: 2px solid #ddd;
   border-radius: 8px;
-  font-size: 16px;
   transition: border-color 0.3s;
 }
 
 .input-group input:focus,
 .input-group select:focus,
 .input-group textarea:focus {
+  border-color: var(--roxo);
   outline: none;
-  border-color: #9370DB;
 }
 
 button {
-  width: 100%;
   padding: 15px;
-  border: none;
-  border-radius: 8px;
-  background: #9370DB;
-  color: white;
   font-size: 18px;
   font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  background: var(--roxo);
+  color: var(--branco);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -191,193 +175,31 @@ button:hover {
 }
 
 #mensagem-status {
-  margin-top: 15px;
+  text-align: center;
   font-weight: 600;
   color: #27ae60;
   height: 20px;
-  text-align: center;
 }
 
-/* Typewriter */
-.typewriter {
-  display: inline-block;
-  overflow: hidden;
-  border-right: 3px solid #9370DB;
-  white-space: nowrap;
-  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
-  max-width: 100%;
-  /* impede que ultrapasse a tela */
-}
-
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-
-  to {
-    width: 100%
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent
-  }
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-  .container {
-    max-width: 95%;
-    padding: 20px 15px;
-  }
-
-  .logo-vuelo {
-    font-size: 2.3rem;
-  }
-
-  .menu-links a {
-    font-size: 19px;
-  }
-
-  .intro {
-    padding: 30px 20px;
-  }
-
-  .intro h1 {
-    font-size: 1.8rem;
-  }
-
-  .intro p {
-    font-size: 1.1rem;
-  }
-
-  .form-card {
-    padding: 35px 25px;
-  }
-
-  .input-group input,
-  .input-group select,
-  .input-group textarea {
-    font-size: 18px;
-    padding: 14px;
-  }
-
-  button {
-    font-size: 18px;
-    padding: 18px;
-  }
-}
-
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .logo-menu {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .logo-vuelo {
-    font-size: 2.5rem;
-  }
-
-  .menu-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .menu-links a {
-    font-size: 20px;
-  }
-
-  .intro {
-    padding: 35px 25px;
-  }
-
-  .intro h1 {
-    font-size: 2rem;
-  }
-
-  .intro p {
-    font-size: 1.2rem;
-  }
-
-  .form-card {
-    padding: 40px 30px;
-  }
-
-  .input-group label {
-    font-size: 1.1rem;
-  }
-
-  .input-group input,
-  .input-group select,
-  .input-group textarea {
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  button {
-    font-size: 20px;
-    padding: 20px;
-  }
-
-  /* ✅ Correção definitiva do fundo no celular */
-  body {
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-}
-
-/* Evitar texto cortado no celular */
-@media (max-width: 600px) {
-  #titulo-digitado {
-    white-space: normal;
-    /* permite quebra de linha */
-    overflow: visible;
-    /* mostra todo o texto */
-    text-align: center;
-    /* centraliza o texto */
-    font-size: 1.8rem;
-    /* um pouco maior, mas ajustado */
-    line-height: 1.3;
-    /* melhora a leitura */
-    border-right: none;
-    /* remove o cursor piscando se quiser */
-  }
-
-  .typewriter {
-    border-right: none;
-    /* impede corte visual no final da linha */
-  }
-}
-
-/* ====== Footer Vuelo ====== */
+/* =======================
+   Footer Vuelo
+======================= */
 .footer-vuelo {
-  background: linear-gradient(180deg, rgba(147,112,219,0.9) 0%, rgba(74,54,117,0.95) 100%);
-  color: #fff;
+  position: relative;
+  z-index: 2;
+  background: rgba(40, 30, 70, 0.95);
+  backdrop-filter: blur(4px);
+  color: var(--texto-claro);
   padding: 50px 25px 30px;
-  margin-top: 80px;
-  border-top: 3px solid #b89cff;
-  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.15);
-  width: 100%;
   font-size: 1rem;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .footer-section h3,
@@ -392,13 +214,11 @@ button:hover {
 .footer-section ul {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #f0f0f0;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .footer-section ul li {
@@ -407,48 +227,68 @@ button:hover {
 
 .footer-section ul li i {
   margin-right: 8px;
-  color: #d6c5ff;
+  color: #cbbef0;
 }
 
 .footer-section a {
-  color: #d6c5ff;
+  color: var(--branco);
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
 .footer-section a:hover {
-  color: #fff;
+  color: var(--amarelo);
   text-decoration: underline;
 }
 
 .social-icons {
   display: flex;
-  align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .social-icons a {
   font-size: 1.5rem;
-  color: #d6c5ff;
+  color: var(--branco);
   transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons a:hover {
   transform: scale(1.25);
-  color: #fff;
+  color: var(--amarelo);
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
   font-size: 1rem;
-  color: #ddd;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  color: #dcdcdc;
   padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ====== Responsivo ====== */
-@media (max-width: 768px) {
+/* =======================
+   Responsividade
+======================= */
+@media (max-width: 900px) {
+  .container {
+    padding: 20px 15px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  header, .logo-menu, .menu-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -458,13 +298,20 @@ button:hover {
     justify-content: center;
   }
 
-  .footer-section h3,
-  .footer-section h4 {
-    font-size: 1.2rem;
+  .intro h1 {
+    font-size: 1.8rem;
   }
 
-  .footer-section p,
-  .footer-section ul {
-    font-size: 1rem;
+  .intro p {
+    font-size: 1.1rem;
+  }
+
+  .form-card {
+    padding: 25px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 18px;
   }
 }
