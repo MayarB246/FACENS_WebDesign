@@ -7,6 +7,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-image: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop');
   background-size: cover;
@@ -15,6 +19,8 @@ body {
   color: #fff;
   min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 body::before {
@@ -31,9 +37,14 @@ body::before {
 .container {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
   padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 /* Cabeçalho */
@@ -41,17 +52,24 @@ header {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
   padding: 15px 25px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   flex-wrap: wrap;
-  gap: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .logo-vuelo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -74,7 +92,7 @@ header {
   color: #9370DB;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   transition: transform 0.2s;
 }
 
@@ -93,17 +111,21 @@ header {
   color: #333;
   border-radius: 12px;
   padding: 25px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  flex-grow: 1;
 }
 
 .intro h1 {
   margin-bottom: 10px;
   color: #9370DB;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .intro p {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 /* Formulário */
@@ -113,6 +135,10 @@ header {
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .input-group {
@@ -151,7 +177,7 @@ button {
   border-radius: 8px;
   background: #9370DB;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.3s;
@@ -166,6 +192,7 @@ button:hover {
   font-weight: 600;
   color: #27ae60;
   height: 20px;
+  text-align: center;
 }
 
 /* Typewriter */
@@ -185,33 +212,19 @@ button:hover {
   50% { border-color: transparent }
 }
 
-/* 📱 Responsividade */
+/* Responsividade */
 @media (max-width: 900px) {
   .container {
     max-width: 95%;
     padding: 20px 15px;
   }
 
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .logo-vuelo {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  .menu-links {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    font-size: 2.3rem;
   }
 
   .menu-links a {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .intro {
@@ -224,7 +237,6 @@ button:hover {
 
   .intro p {
     font-size: 1.1rem;
-    line-height: 1.5;
   }
 
   .form-card {
@@ -247,17 +259,22 @@ button:hover {
 @media (max-width: 600px) {
   header {
     flex-direction: column;
-    padding: 20px;
+    text-align: center;
+  }
+
+  .logo-menu {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .logo-vuelo {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .menu-links {
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 15px;
   }
 
   .menu-links a {
