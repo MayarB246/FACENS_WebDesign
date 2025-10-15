@@ -395,3 +395,12 @@ html {
     font-size: 1.6rem;
   }
 }
+
+/* Corrigir o fundo no celular */
+@media (max-width: 600px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center top;
+  }
+}
