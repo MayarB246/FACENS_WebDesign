@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(74, 54, 117, 0.85);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Cabeçalho */
+header {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo-vuelo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.v-amarelo {
+  color: #FFD700;
+}
+
+.resto-roxo {
+  color: #9370DB;
+}
+
+.menu-links a {
+  color: #9370DB;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.menu-links a:hover {
+  transform: scale(1.05);
+  color: #7B68EE;
+}
+
+.menu-links a.active {
+  text-decoration: underline;
+}
+
+/* Introdução */
+.intro {
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+.intro h1 {
+  margin-bottom: 10px;
+  color: #9370DB;
+}
+
+.intro p {
+  font-size: 1rem;
+}
+
+/* FAQ */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+.faq-item h3 {
+  color: #9370DB;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.faq-item a {
+  color: #9370DB;
+  text-decoration: underline;
+}
+
+.faq-item a:hover {
+  color: #7B68EE;
+}
+
+/* Typewriter */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid #9370DB;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .intro h1 {
+    font-size: 1.4rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+  }
+}
+.voltar-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #9370DB;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+  transition: background 0.3s;
+  z-index: 99;
+}
+
+.voltar-topo:hover {
+  background: #7B68EE;
+}
+
+.faq-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.faq-item.aparecer {
+  opacity: 1;
+  transform: translateY(0);
+}
