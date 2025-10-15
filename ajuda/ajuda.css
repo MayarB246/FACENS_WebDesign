@@ -1,4 +1,15 @@
+/* === Base === */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:root {
+  --roxo: #9370DB;
+  --roxo-escuro: #4a3675;
+  --amarelo: #FFD700;
+  --branco: #ffffff;
+  --cinza-claro: #f3f3f3;
+  --texto-escuro: #333;
+  --texto-claro: #e0dff2;
+}
 
 * {
   margin: 0;
@@ -7,36 +18,38 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-body {
-  background-image: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  color: #fff;
-  min-height: 100vh;
-  position: relative;
+html, body {
+  height: 100%;
+  font-size: 16px;
+  background: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop') center top / cover fixed;
+  color: var(--branco);
+  display: flex;
+  flex-direction: column;
 }
 
 body::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  inset: 0;
   background: rgba(74, 54, 117, 0.85);
   z-index: 1;
+  pointer-events: none;
 }
 
+/* === Container === */
 .container {
   position: relative;
   z-index: 2;
   max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-/* Cabeçalho */
+/* === Header === */
 header {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
@@ -45,7 +58,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .logo-vuelo {
@@ -53,18 +66,13 @@ header {
   font-weight: bold;
 }
 
-.v-amarelo {
-  color: #FFD700;
-}
-
-.resto-roxo {
-  color: #9370DB;
-}
+.v-amarelo { color: var(--amarelo); }
+.resto-roxo { color: var(--roxo); }
 
 .menu-links a {
-  color: #9370DB;
-  text-decoration: none;
+  color: var(--roxo);
   font-weight: bold;
+  text-decoration: none;
   font-size: 16px;
   transition: transform 0.2s;
 }
@@ -74,30 +82,25 @@ header {
   color: #7B68EE;
 }
 
-.menu-links a.active {
-  text-decoration: underline;
-}
-
-/* Introdução */
+/* === Intro === */
 .intro {
-  background: white;
-  color: #333;
+  background: var(--branco);
+  color: var(--texto-escuro);
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 30px;
   box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  text-align: center;
 }
 
 .intro h1 {
   margin-bottom: 10px;
-  color: #9370DB;
+  color: var(--roxo);
 }
 
-.intro p {
-  font-size: 1rem;
-}
+.intro p { font-size: 1rem; }
 
-/* FAQ */
+/* === FAQ === */
 .faq {
   display: flex;
   flex-direction: column;
@@ -105,15 +108,23 @@ header {
 }
 
 .faq-item {
-  background: white;
-  color: #333;
+  background: var(--branco);
+  color: var(--texto-escuro);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.faq-item.aparecer {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faq-item h3 {
-  color: #9370DB;
+  color: var(--roxo);
   margin-bottom: 10px;
   font-size: 1.2rem;
 }
@@ -124,18 +135,16 @@ header {
 }
 
 .faq-item a {
-  color: #9370DB;
+  color: var(--roxo);
   text-decoration: underline;
 }
 
-.faq-item a:hover {
-  color: #7B68EE;
-}
+.faq-item a:hover { color: #7B68EE; }
 
 /* Typewriter */
 .typewriter {
   overflow: hidden;
-  border-right: 3px solid #9370DB;
+  border-right: 3px solid var(--roxo);
   white-space: nowrap;
   animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
 }
@@ -144,37 +153,17 @@ header {
   from { width: 0 }
   to { width: 100% }
 }
-
 @keyframes blink {
   50% { border-color: transparent }
 }
 
-/* Responsivo */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .intro h1 {
-    font-size: 1.4rem;
-  }
-
-  .faq-item h3 {
-    font-size: 1.1rem;
-  }
-
-  .faq-item p {
-    font-size: 0.95rem;
-  }
-}
+/* Voltar ao topo */
 .voltar-topo {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: #9370DB;
-  color: white;
+  background: var(--roxo);
+  color: var(--branco);
   border: none;
   padding: 12px 18px;
   border-radius: 50px;
@@ -187,17 +176,110 @@ header {
   z-index: 99;
 }
 
-.voltar-topo:hover {
-  background: #7B68EE;
+.voltar-topo:hover { background: #7B68EE; }
+
+/* === Footer Vuelo === */
+.footer-vuelo {
+  position: relative;
+  z-index: 2;
+  background: rgba(40, 30, 70, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--texto-claro);
+  padding: 50px 25px 30px;
+  font-size: 1rem;
 }
 
-.faq-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.faq-item.aparecer {
-  opacity: 1;
-  transform: translateY(0);
+.footer-section h3,
+.footer-section h4 {
+  color: #f0eaff;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li i {
+  margin-right: 8px;
+  color: #cbbef0;
+}
+
+.footer-section a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--branco);
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: var(--texto-claro);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.25);
+  color: var(--branco);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #cfc6e6;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* === Responsivo === */
+@media (max-width: 900px) {
+  .container { padding: 20px 15px; }
+  .footer-content { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  header, .logo-menu, .menu-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .intro h1 { font-size: 1.4rem; }
+  .faq-item h3 { font-size: 1.1rem; }
+  .faq-item p { font-size: 0.95rem; }
+
+  .footer-content { grid-template-columns: 1fr; text-align: center; }
+  .social-icons { justify-content: center; }
 }

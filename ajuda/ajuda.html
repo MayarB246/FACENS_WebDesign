@@ -1,65 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Ajuda | Vuelo</title>
-  <link rel="stylesheet" href="ajuda.css" />
-  <script defer src="ajuda.js"></script>
+    <meta charset="UTF-8" />
+    <title>Ajuda | Vuelo</title>
+    <link rel="stylesheet" href="ajuda.css" />
+    <script defer src="ajuda.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="logo-menu">
-        <div class="logo-vuelo">
-          <span class="v-amarelo">V</span><span class="resto-roxo">uelo</span>
+    <div class="container">
+        <header>
+            <div class="logo-menu">
+                <div class="logo-vuelo">
+                    <span class="v-amarelo">V</span><span class="resto-roxo">uelo</span>
+                </div>
+                <nav class="menu-links">
+                    <a href="../index.html">← Página Principal</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="intro">
+            <h1 id="titulo-digitado" class="typewriter">Central de Ajuda Vuelo</h1>
+            <p>Encontre respostas para as dúvidas mais comuns sobre o sistema de prospecção de leads.</p>
+        </section>
+
+        <section class="faq">
+            <div class="faq-item">
+                <h3>📌 O que é um lead?</h3>
+                <p>Um lead é um potencial cliente que demonstrou algum interesse em seu produto ou serviço. No Vuelo,
+                    cada estabelecimento cadastrado representa um lead em prospecção.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>📊 Como funciona o ciclo de status (Frio, Morno, Quente)?</h3>
+                <p>Esses status indicam o nível de interesse ou proximidade de fechamento. Frio: pouco engajado; Morno:
+                    em negociação; Quente: pronto para fechar. Você pode alterar com um clique no dashboard.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>📞 Como registrar os contatos realizados?</h3>
+                <p>Use os botões “1º contato”, “2º contato” e “3º contato” para marcar cada etapa. Isso ajuda a
+                    acompanhar o histórico de interação com o lead.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🔍 Como usar os filtros e busca?</h3>
+                <p>Na lista de leads, você pode filtrar por tipo, bairro, status ou etapa. A busca permite encontrar
+                    rapidamente por nome, endereço ou tipo de estabelecimento.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>💾 Os dados são salvos automaticamente?</h3>
+                <p>Sim! Toda alteração é salva no <strong>localStorage</strong> do navegador. Mesmo se você fechar a
+                    página, os dados continuam disponíveis na próxima visita.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>📤 Posso exportar os leads?</h3>
+                <p>Atualmente, o Vuelo não possui exportação direta. Mas você pode copiar os dados manualmente ou
+                    aguardar futuras atualizações com integração externa.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>📚 Onde posso aprender mais sobre prospecção?</h3>
+                <p>Recomendamos o <a href="https://www.exactsales.com.br/prospeccao-de-leads/" target="_blank">Guia da
+                        Exact Sales</a> e o <a
+                        href="https://datastone.com.br/blog/2025/10/11/software-prospeccao-b2b-genere-leads-qualificados/"
+                        target="_blank">Blog da Data Stone</a> para aprofundar seu conhecimento em vendas B2B.</p>
+            </div>
+        </section>
+    </div>
+    <footer class="footer-vuelo">
+        <div class="footer-content">
+            <div class="footer-section institucional">
+                <h3>Vuelo</h3>
+                <p>
+                    Plataforma de prospecção de leads desenvolvida para a disciplina de Web Design — Engenharia da
+                    Computação (FACENS).
+                    Gerencie seus contatos comerciais com eficiência, visualização inteligente e controle total.
+                </p>
+            </div>
+
+            <div class="footer-section contato">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Sorocaba - SP, Brasil</li>
+                    <li><i class="fas fa-envelope"></i> contato@vuelo.com.br</li>
+                    <li><i class="fas fa-phone"></i> (15) 3238-1234</li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../func/funcionalidades.html">Funcionalidades</a></li>
+                    <li><a href="../sobre/sobre.html">Sobre</a></li>
+                    <li><a href="../cadastro/cadastro.html">Cadastro</a></li>
+                    <li><a href="../ajuda/ajuda.html">Ajuda</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section redes">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
         </div>
-        <nav class="menu-links">
-          <a href="../index.html">← Página Principal</a>
-        </nav>
-      </div>
-    </header>
 
-    <section class="intro">
-      <h1 id="titulo-digitado" class="typewriter">Central de Ajuda Vuelo</h1>
-      <p>Encontre respostas para as dúvidas mais comuns sobre o sistema de prospecção de leads.</p>
-    </section>
-
-    <section class="faq">
-      <div class="faq-item">
-        <h3>📌 O que é um lead?</h3>
-        <p>Um lead é um potencial cliente que demonstrou algum interesse em seu produto ou serviço. No Vuelo, cada estabelecimento cadastrado representa um lead em prospecção.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>📊 Como funciona o ciclo de status (Frio, Morno, Quente)?</h3>
-        <p>Esses status indicam o nível de interesse ou proximidade de fechamento. Frio: pouco engajado; Morno: em negociação; Quente: pronto para fechar. Você pode alterar com um clique no dashboard.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>📞 Como registrar os contatos realizados?</h3>
-        <p>Use os botões “1º contato”, “2º contato” e “3º contato” para marcar cada etapa. Isso ajuda a acompanhar o histórico de interação com o lead.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>🔍 Como usar os filtros e busca?</h3>
-        <p>Na lista de leads, você pode filtrar por tipo, bairro, status ou etapa. A busca permite encontrar rapidamente por nome, endereço ou tipo de estabelecimento.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>💾 Os dados são salvos automaticamente?</h3>
-        <p>Sim! Toda alteração é salva no <strong>localStorage</strong> do navegador. Mesmo se você fechar a página, os dados continuam disponíveis na próxima visita.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>📤 Posso exportar os leads?</h3>
-        <p>Atualmente, o Vuelo não possui exportação direta. Mas você pode copiar os dados manualmente ou aguardar futuras atualizações com integração externa.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>📚 Onde posso aprender mais sobre prospecção?</h3>
-        <p>Recomendamos o <a href="https://www.exactsales.com.br/prospeccao-de-leads/" target="_blank">Guia da Exact Sales</a> e o <a href="https://datastone.com.br/blog/2025/10/11/software-prospeccao-b2b-genere-leads-qualificados/" target="_blank">Blog da Data Stone</a> para aprofundar seu conhecimento em vendas B2B.</p>
-      </div>
-    </section>
-  </div>
+        <div class="footer-bottom">
+            <p>© 2025 Vuelo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
+
 </html>
