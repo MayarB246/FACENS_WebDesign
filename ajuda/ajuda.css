@@ -19,11 +19,23 @@
 }
 
 html, body {
-  min-height: 100%;
+  min-height: 100vh;
   background: linear-gradient(180deg, #4a3675 0%, #9370DB 100%);
   color: var(--branco);
   display: flex;
   flex-direction: column;
+}
+
+/* ======================= Container ======================= */
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 /* ======================= Header ======================= */
@@ -31,10 +43,8 @@ header {
   background: rgba(255, 255, 255, 0.95);
   color: var(--texto-escuro);
   border-radius: 10px;
-  margin: 25px auto;
   padding: 15px 25px;
-  width: 95%;
-  max-width: 1000px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +52,7 @@ header {
 }
 
 .logo-vuelo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -72,10 +82,8 @@ header {
   color: var(--texto-escuro);
   border-radius: 12px;
   padding: 35px 25px;
-  margin: 20px auto;
-  width: 95%;
-  max-width: 1000px;
   text-align: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
 .intro h1 {
@@ -91,12 +99,10 @@ header {
 
 /* ======================= FAQ ======================= */
 .faq {
-  width: 95%;
-  max-width: 1000px;
-  margin: 20px auto 60px;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin-bottom: 60px;
 }
 
 .faq-item {
@@ -155,7 +161,7 @@ header {
   transform: scale(1.1);
 }
 
-/* ======================= Footer Vuelo (estilo Cadastro) ======================= */
+/* ======================= Footer Vuelo ======================= */
 .footer-vuelo {
   background: rgba(40, 30, 70, 0.95);
   backdrop-filter: blur(4px);
