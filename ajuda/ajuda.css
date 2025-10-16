@@ -1,5 +1,5 @@
 /* =======================
-   Base e Reset
+   Base
 ======================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
@@ -9,8 +9,8 @@
   --amarelo: #FFD700;
   --branco: #ffffff;
   --cinza-claro: #f3f3f3;
-  --texto-escuro: #333;
-  --texto-claro: #e0dff2;
+  --texto-escuro: #222;
+  --texto-claro: #f2f2f2;
 }
 
 * {
@@ -21,50 +21,27 @@
 }
 
 html, body {
-  height: 100%;
-  font-size: 16px;
-  background: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop') center top / cover fixed;
+  min-height: 100%;
+  background: linear-gradient(180deg, #4a3675 0%, #9370DB 100%);
   color: var(--branco);
   display: flex;
   flex-direction: column;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: rgba(74, 54, 117, 0.85);
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* =======================
-   Container
-======================= */
-.container {
-  position: relative;
-  z-index: 2;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
 }
 
 /* =======================
    Header
 ======================= */
 header {
-  background-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--texto-escuro);
   border-radius: 10px;
+  margin: 25px auto;
   padding: 15px 25px;
-  margin-bottom: 30px;
+  width: 95%;
+  max-width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .logo-vuelo {
@@ -77,16 +54,12 @@ header {
 
 .menu-links a {
   color: var(--roxo);
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 16px;
-  transition: transform 0.2s;
+  font-size: 1rem;
 }
 
-.menu-links a:hover {
-  transform: scale(1.05);
-  color: #7B68EE;
-}
+.menu-links a:hover { color: #7B68EE; }
 
 /* =======================
    Intro
@@ -95,40 +68,44 @@ header {
   background: var(--branco);
   color: var(--texto-escuro);
   border-radius: 12px;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  padding: 35px 25px;
+  margin: 20px auto;
+  width: 95%;
+  max-width: 1000px;
   text-align: center;
 }
 
 .intro h1 {
-  margin-bottom: 15px;
   color: var(--roxo);
-  font-size: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
 .intro p {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.8;
 }
 
 /* =======================
-   FAQ (TODAS AS CAIXAS UNIFORMES)
+   FAQ
 ======================= */
 .faq {
+  width: 95%;
+  max-width: 1000px;
+  margin: 20px auto 40px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 }
 
 .faq-item {
   background: var(--branco);
   color: var(--texto-escuro);
   border-radius: 12px;
-  padding: 35px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+  padding: 28px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(25px);
   transition: all 0.6s ease-out;
 }
 
@@ -139,59 +116,35 @@ header {
 
 .faq-item h3 {
   color: var(--roxo);
-  margin-bottom: 20px;
   font-size: 1.6rem;
+  margin-bottom: 15px;
 }
 
 .faq-item p {
   font-size: 1.25rem;
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .faq-item a {
   color: var(--roxo);
   text-decoration: underline;
 }
-
-.faq-item a:hover {
-  color: #7B68EE;
-}
-
 /* =======================
-   Typewriter
-======================= */
-.typewriter {
-  overflow: hidden;
-  border-right: 3px solid var(--roxo);
-  white-space: nowrap;
-  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* =======================
-   Botão Voltar ao Topo
+   Botão "Voltar ao Topo"
 ======================= */
 .voltar-topo {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 25px;
+  right: 25px;
   background: var(--roxo);
   color: var(--branco);
   border: none;
   padding: 12px 18px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   display: none;
   transition: background 0.3s, transform 0.3s;
   z-index: 99;
@@ -203,38 +156,35 @@ header {
 }
 
 /* =======================
-   Footer Vuelo (IGUAL AO CADASTRO)
+   Footer (igual ao Cadastro)
 ======================= */
 .footer-vuelo {
-  position: relative;
-  z-index: 2;
-  background: rgba(40, 30, 70, 0.95);
-  backdrop-filter: blur(4px);
+  background: #2d2150;
   color: var(--texto-claro);
-  padding: 60px 25px 40px;
-  font-size: 1.1rem;
+  padding: 60px 25px 35px;
+  text-align: center;
+  margin-top: auto;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 50px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .footer-section h3,
 .footer-section h4 {
-  color: #ffffff;
-  margin-bottom: 20px;
+  color: var(--branco);
+  margin-bottom: 18px;
   font-size: 1.5rem;
-  font-weight: 700;
 }
 
 .footer-section p,
 .footer-section ul {
   font-size: 1.15rem;
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
 .footer-section ul {
@@ -243,19 +193,13 @@ header {
 }
 
 .footer-section ul li {
-  margin-bottom: 12px;
-}
-
-.footer-section ul li i {
-  margin-right: 10px;
-  color: #cbbef0;
+  margin-bottom: 10px;
 }
 
 .footer-section a {
   color: var(--texto-claro);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
 }
 
 .footer-section a:hover {
@@ -265,8 +209,8 @@ header {
 
 .social-icons {
   display: flex;
+  justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .social-icons a {
@@ -281,36 +225,37 @@ header {
 }
 
 .footer-bottom {
-  text-align: center;
-  margin-top: 45px;
-  font-size: 1.2rem;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 15px;
+  font-size: 1rem;
   color: #dcdcdc;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* =======================
    Responsividade
 ======================= */
 @media (max-width: 900px) {
-  .container { padding: 20px 15px; }
-  .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .intro h1 { font-size: 1.9rem; }
+  .intro p, .faq-item p { font-size: 1.2rem; }
 }
 
 @media (max-width: 600px) {
-  header, .logo-menu, .menu-links {
+  header {
     flex-direction: column;
-    align-items: center;
     gap: 10px;
     text-align: center;
   }
 
-  .intro h1 { font-size: 1.8rem; }
-  .intro p { font-size: 1.2rem; }
-
+  .faq-item { padding: 25px; }
   .faq-item h3 { font-size: 1.4rem; }
-  .faq-item p { font-size: 1.2rem; }
+  .faq-item p { font-size: 1.15rem; }
 
-  .footer-content { grid-template-columns: 1fr; text-align: center; }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-section { text-align: center; }
   .social-icons { justify-content: center; }
 }
