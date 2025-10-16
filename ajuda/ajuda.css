@@ -1,4 +1,6 @@
-/* === Base === */
+/* =======================
+   Base e Reset
+======================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
 :root {
@@ -36,7 +38,9 @@ body::before {
   pointer-events: none;
 }
 
-/* === Container === */
+/* =======================
+   Container
+======================= */
 .container {
   position: relative;
   z-index: 2;
@@ -49,7 +53,9 @@ body::before {
   gap: 30px;
 }
 
-/* === Header === */
+/* =======================
+   Header
+======================= */
 header {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
@@ -82,7 +88,9 @@ header {
   color: #7B68EE;
 }
 
-/* === Intro === */
+/* =======================
+   Intro
+======================= */
 .intro {
   background: var(--branco);
   color: var(--texto-escuro);
@@ -99,13 +107,17 @@ header {
   font-size: 2rem;
 }
 
-.intro p { font-size: 1.2rem; }
+.intro p {
+  font-size: 1.2rem;
+}
 
-/* === FAQ === */
+/* =======================
+   FAQ
+======================= */
 .faq {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .faq-item {
@@ -127,11 +139,11 @@ header {
 .faq-item h3 {
   color: var(--roxo);
   margin-bottom: 15px;
-  font-size: 1.5rem; /* Aumentei o tamanho */
+  font-size: 1.5rem;
 }
 
 .faq-item p {
-  font-size: 1.15rem; /* Aumentei o tamanho */
+  font-size: 1.15rem;
   line-height: 1.8;
 }
 
@@ -140,9 +152,13 @@ header {
   text-decoration: underline;
 }
 
-.faq-item a:hover { color: #7B68EE; }
+.faq-item a:hover {
+  color: #7B68EE;
+}
 
-/* Typewriter */
+/* =======================
+   Typewriter
+======================= */
 .typewriter {
   overflow: hidden;
   border-right: 3px solid var(--roxo);
@@ -151,14 +167,17 @@ header {
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink {
-  50% { border-color: transparent }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
-/* Voltar ao topo */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* =======================
+   Botão Voltar ao Topo
+======================= */
 .voltar-topo {
   position: fixed;
   bottom: 30px;
@@ -182,7 +201,9 @@ header {
   transform: scale(1.1);
 }
 
-/* === Footer Vuelo === */
+/* =======================
+   Footer Vuelo
+======================= */
 .footer-vuelo {
   position: relative;
   z-index: 2;
@@ -213,6 +234,11 @@ header {
 .footer-section ul {
   font-size: 1.15rem;
   line-height: 1.9;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
 }
 
 .footer-section ul li {
@@ -262,7 +288,9 @@ header {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* === Responsivo === */
+/* =======================
+   Responsividade
+======================= */
 @media (max-width: 900px) {
   .container { padding: 20px 15px; }
   .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
