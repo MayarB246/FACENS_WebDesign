@@ -20,8 +20,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   font-size: 16px;
   background: url('https://images.unsplash.com/photo-1593348988354-91590f8ce828?q=80&w=1974&auto=format&fit=crop') center top / cover fixed;
@@ -58,7 +57,7 @@ body::before {
 /* =======================
    Header
 ======================= */
-.header {
+header {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
   padding: 15px 25px;
@@ -69,26 +68,13 @@ body::before {
   align-items: center;
 }
 
-.logo-menu {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 .logo-vuelo {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.v-amarelo {
-  color: var(--amarelo);
-}
-
-.resto-roxo {
-  color: var(--roxo);
-}
+.v-amarelo { color: var(--amarelo); }
+.resto-roxo { color: var(--roxo); }
 
 .menu-links {
   display: flex;
@@ -150,7 +136,7 @@ body::before {
   color: var(--texto-escuro);
   border-radius: 12px;
   padding: 28px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   opacity: 0;
   transform: translateY(25px);
   transition: all 0.6s ease-out;
@@ -196,6 +182,7 @@ body::before {
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
 }
 
 .footer-section h3,
@@ -275,6 +262,7 @@ body::before {
   .footer-content {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    text-align: left;
   }
 
   .faq-item h3 {
@@ -287,10 +275,7 @@ body::before {
 }
 
 @media (max-width: 600px) {
-
-  header,
-  .logo-menu,
-  .menu-links {
+  header, .logo-menu, .menu-links {
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -300,6 +285,7 @@ body::before {
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+    justify-items: center;
   }
 
   .social-icons {
@@ -317,27 +303,32 @@ body::before {
   .faq-item {
     padding: 25px;
   }
-
-  .faq-item p {
-    font-size: 1.3rem;
-    line-height: 2;
-  }
-
 }
 
-html,
-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+/* =======================
+   Botão Voltar ao Topo
+=======================
+Mantenha exatamente como estava
+======================= */
+.voltar-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #9370DB;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+  transition: background 0.3s, transform 0.3s;
+  z-index: 99;
 }
 
-.container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.faq {
-  margin-bottom: 60px;
+.voltar-topo:hover {
+  background: #7B68EE;
+  transform: scale(1.05);
 }
