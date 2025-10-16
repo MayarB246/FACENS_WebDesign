@@ -13,3 +13,17 @@ function digitarTexto() {
 }
 
 digitarTexto();
+
+// Botão "Voltar ao topo"
+const voltarBtn = document.createElement('button');
+voltarBtn.textContent = '↑ Topo';
+voltarBtn.className = 'voltar-topo';
+document.body.appendChild(voltarBtn);
+
+voltarBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+  voltarBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
