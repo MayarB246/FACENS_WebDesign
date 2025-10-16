@@ -203,7 +203,7 @@ header {
 }
 
 /* =======================
-   Footer Vuelo (IGUAL AO CSS DE INSPIRAÇÃO)
+   Footer Vuelo
 ======================= */
 .footer-vuelo {
   position: relative;
@@ -293,8 +293,13 @@ header {
    Responsividade
 ======================= */
 @media (max-width: 900px) {
-  .container { padding: 20px 15px; }
-  .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .container {
+    padding: 20px 15px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -305,12 +310,52 @@ header {
     text-align: center;
   }
 
-  .intro h1 { font-size: 1.8rem; }
-  .intro p { font-size: 1.2rem; }
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-  .faq-item h3 { font-size: 1.4rem; }
-  .faq-item p { font-size: 1.25rem; }
+  .social-icons {
+    justify-content: center;
+  }
 
-  .footer-content { grid-template-columns: 1fr; text-align: center; }
-  .social-icons { justify-content: center; }
+  .intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro p {
+    font-size: 1.1rem;
+  }
+
+  .form-card {
+    padding: 25px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 18px;
+  }
+}
+
+.voltar-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #9370DB; /* roxo Vuelo */
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none; /* começa escondido */
+  transition: background 0.3s, transform 0.3s;
+  z-index: 99;
+}
+
+.voltar-topo:hover {
+  background: #7B68EE; /* roxo mais claro no hover */
+  transform: scale(1.05);
 }
