@@ -1,6 +1,4 @@
-/* =======================
-   Base
-======================= */
+/* ======================= Base & Reset ======================= */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
 :root {
@@ -10,7 +8,7 @@
   --branco: #ffffff;
   --cinza-claro: #f3f3f3;
   --texto-escuro: #222;
-  --texto-claro: #f2f2f2;
+  --texto-claro: #e0dff2;
 }
 
 * {
@@ -21,24 +19,14 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   background: linear-gradient(180deg, #4a3675 0%, #9370DB 100%);
   color: var(--branco);
   display: flex;
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-/* =======================
-   Header
-======================= */
+/* ======================= Header ======================= */
 header {
   background: rgba(255, 255, 255, 0.95);
   color: var(--texto-escuro);
@@ -50,6 +38,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo-vuelo {
@@ -60,6 +49,12 @@ header {
 .v-amarelo { color: var(--amarelo); }
 .resto-roxo { color: var(--roxo); }
 
+.menu-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 .menu-links a {
   color: var(--roxo);
   font-weight: 600;
@@ -67,11 +62,11 @@ header {
   font-size: 1rem;
 }
 
-.menu-links a:hover { color: #7B68EE; }
+.menu-links a:hover {
+  color: #7B68EE;
+}
 
-/* =======================
-   Intro
-======================= */
+/* ======================= Intro ======================= */
 .intro {
   background: var(--branco);
   color: var(--texto-escuro);
@@ -94,13 +89,11 @@ header {
   line-height: 1.8;
 }
 
-/* =======================
-   FAQ
-======================= */
+/* ======================= FAQ ======================= */
 .faq {
   width: 95%;
   max-width: 1000px;
-  margin: 20px auto 40px;
+  margin: 20px auto 60px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -137,9 +130,8 @@ header {
   color: var(--roxo);
   text-decoration: underline;
 }
-/* =======================
-   Botão "Voltar ao Topo"
-======================= */
+
+/* ======================= Botão "Voltar ao Topo" ======================= */
 .voltar-topo {
   position: fixed;
   bottom: 25px;
@@ -163,15 +155,16 @@ header {
   transform: scale(1.1);
 }
 
-/* =======================
-   Footer (igual ao Cadastro)
-======================= */
+/* ======================= Footer Vuelo (estilo Cadastro) ======================= */
 .footer-vuelo {
-  background: #2d2150;
+  background: rgba(40, 30, 70, 0.95);
+  backdrop-filter: blur(4px);
   color: var(--texto-claro);
   padding: 60px 25px 35px;
   text-align: center;
   margin-top: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-content {
@@ -240,30 +233,19 @@ header {
   color: #dcdcdc;
 }
 
-/* =======================
-   Responsividade
-======================= */
+/* ======================= Responsividade ======================= */
 @media (max-width: 900px) {
   .intro h1 { font-size: 1.9rem; }
   .intro p, .faq-item p { font-size: 1.2rem; }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 30px; }
 }
 
 @media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
+  header { flex-direction: column; gap: 10px; text-align: center; }
   .faq-item { padding: 25px; }
   .faq-item h3 { font-size: 1.4rem; }
   .faq-item p { font-size: 1.15rem; }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
+  .footer-content { grid-template-columns: 1fr; gap: 25px; }
   .footer-section { text-align: center; }
   .social-icons { justify-content: center; }
 }
