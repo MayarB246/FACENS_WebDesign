@@ -15,15 +15,13 @@ function digitarTexto() {
 digitarTexto();
 
 // Botão "Voltar ao topo"
-const voltarBtn = document.createElement('button');
-voltarBtn.textContent = '↑ Topo';
-voltarBtn.className = 'voltar-topo';
-document.body.appendChild(voltarBtn);
+const voltarBtn = document.querySelector('.voltar-topo');
+
+window.addEventListener('scroll', () => {
+  // Mostra o botão mesmo se a página for curta
+ voltarBtn.style.display = 'block';
+});
 
 voltarBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-window.addEventListener('scroll', () => {
-  voltarBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
 });

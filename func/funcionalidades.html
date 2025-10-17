@@ -2,76 +2,141 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Funcionalidades | Vuelo</title>
   <link rel="stylesheet" href="funcionalidades.css" />
   <script defer src="funcionalidades.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
+    <!-- ================= HEADER ================= -->
     <header>
       <div class="logo-menu">
         <div class="logo-vuelo">
           <span class="v-amarelo">V</span><span class="resto-roxo">uelo</span>
         </div>
         <nav class="menu-links">
-          <a href="../index.html" class="active">← Voltar à Página Principal</a>
+          <a href="../index.html" class="active">← Página Principal</a>
         </nav>
       </div>
     </header>
 
     <section class="intro">
-      <h1 id="titulo-digitado" class="typewriter">Funcionalidades Interativas</h1>
-      <p>Explore ferramentas úteis para sua experiência na plataforma Vuelo.</p>
+      <h1 id="titulo-digitado" class="typewriter">Funcionalidades da Plataforma</h1>
+      <p>Explore ferramentas interativas e úteis para sua experiência no Vuelo.</p>
     </section>
 
-    <section>
+    <!-- ================= ZOOM ================= -->
+    <section class="zoom-section form-card">
       <h2>🔍 Zoom da Página</h2>
-      <button id="zoom-in">Zoom +</button>
-      <button id="zoom-out">Zoom −</button>
-      <button id="zoom-reset">Reset</button>
+      <div class="zoom-controls">
+        <button id="zoom-out">-</button>
+        <button id="zoom-reset">100%</button>
+        <button id="zoom-in">+</button>
+      </div>
     </section>
 
-    <section>
+    <!-- ================= CALCULADORA ================= -->
+    <section class="calc-section form-card">
       <h2>🧮 Calculadora</h2>
-      <input type="number" id="num1" placeholder="Número 1" />
-      <input type="number" id="num2" placeholder="Número 2" />
-      <select id="operation">
-        <option value="add">Somar</option>
-        <option value="subtract">Subtrair</option>
-        <option value="multiply">Multiplicar</option>
-        <option value="divide">Dividir</option>
-      </select>
-      <button id="calculate">Calcular</button>
+      <div class="calc-box">
+        <input type="number" id="num1" placeholder="Número 1" />
+        <select id="operation">
+          <option value="add">+</option>
+          <option value="subtract">−</option>
+          <option value="multiply">×</option>
+          <option value="divide">÷</option>
+        </select>
+        <input type="number" id="num2" placeholder="Número 2" />
+        <button id="calculate">Calcular</button>
+      </div>
       <p id="calc-result">Resultado: —</p>
     </section>
 
-    <section>
+    <!-- ================= RELÓGIO ================= -->
+    <section class="clock-section form-card">
       <h2>🕒 Relógio Digital</h2>
-      <div id="clock">--:--:--</div>
+      <div id="clock" class="clock"></div>
     </section>
 
-    <section>
+    <!-- ================= COPIAR TEXTO ================= -->
+    <section class="copy-section form-card">
       <h2>📋 Copiar Texto</h2>
       <input type="text" id="copy-source" value="Texto para copiar" />
       <button id="copy-button">Copiar</button>
       <p id="copy-status"></p>
     </section>
 
-    <section>
+    <!-- ================= FORMULÁRIO ================= -->
+    <section class="form-section form-card">
       <h2>🎯 Validação de Formulário</h2>
       <form id="config-form">
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" required />
-        <span id="email-feedback"></span><br /><br />
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Digite seu email" required />
+          <span id="email-feedback" class="feedback"></span>
+        </div>
 
-        <label for="senha">Senha:</label><br />
-        <input type="password" id="senha" required minlength="6" />
-        <span id="senha-feedback"></span><br /><br />
+        <div class="input-group">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" placeholder="Mínimo 6 caracteres" required />
+          <span id="senha-feedback" class="feedback"></span>
+        </div>
 
-        <button type="submit">Enviar</button>
+        <button type="submit">Salvar Configurações</button>
+        <p id="form-status"></p>
       </form>
-      <p id="form-status"></p>
     </section>
+
+    <!-- ================= BOTÃO VOLTAR AO TOPO ================= -->
+    <button class="voltar-topo" id="voltar-topo"><i class="fas fa-arrow-up"></i> Topo</button>
   </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer-vuelo">
+    <div class="footer-content">
+      <div class="footer-section institucional">
+        <h3>Vuelo</h3>
+        <p>
+          Plataforma de prospecção e ferramentas interativas desenvolvida para a disciplina de Web Design — Engenharia da Computação (FACENS).
+          Utilize e explore as funcionalidades com eficiência e controle total.
+        </p>
+      </div>
+
+      <div class="footer-section contato">
+        <h4>Contato</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Sorocaba - SP, Brasil</li>
+          <li><i class="fas fa-envelope"></i> contato@vuelo.com.br</li>
+          <li><i class="fas fa-phone"></i> (15) 3238-1234</li>
+        </ul>
+      </div>
+
+      <div class="footer-section links">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../func/funcionalidades.html">Funcionalidades</a></li>
+          <li><a href="../sobre/sobre.html">Sobre</a></li>
+          <li><a href="../cadastro/cadastro.html">Cadastro</a></li>
+          <li><a href="../ajuda/ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section redes">
+        <h4>Redes Sociais</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Vuelo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>
